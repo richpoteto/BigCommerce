@@ -1,0 +1,10 @@
+{{#partial "page"}}
+
+  <h1 class="page-heading heading-tr">{{ blog.post.title }}</h1>
+
+<div class="blog-post-wrapper">
+{{> components/blog/post post=blog.post show_tags=true}}
+</div>
+
+{{/partial}}
+{{> layout/base}}

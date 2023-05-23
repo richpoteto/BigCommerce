@@ -1,0 +1,415 @@
+---
+products:
+    new:
+        limit: {{theme_settings.homepage_new_products_count}}
+    featured:
+        limit: {{theme_settings.homepage_featured_products_count}}
+    top_sellers:
+        limit: {{theme_settings.homepage_top_products_count}}
+carousel: {{theme_settings.homepage_show_carousel}}
+blog:
+    recent_posts:
+        limit: {{theme_settings.homepage_blog_posts_count}}
+        summary: 200
+
+---
+{{#partial "hero"}}
+    {{{region name="home_below_menu"}}}
+    {{#and carousel carousel.slides.length}}
+	<div class="header-wrapper-home">
+        {{> components/carousel arrows=theme_settings.homepage_show_carousel_arrows play_pause_button=theme_settings.homepage_show_carousel_play_pause_button}}
+		</div>
+    {{/and}}
+
+    {{{region name="home_below_carousel"}}}
+{{/partial}}
+
+{{#partial "page"}}
+
+    {{#each shipping_messages}}
+        {{> components/common/alert/alert-info message}}
+    {{/each}}
+    <script type="text/template" id="embla-dot-template">
+        <button class="embla__dot" type="button">
+            <span></span>
+        </button>
+    </script>
+
+        <div class="below-hero-section">
+            	<div class="heading-align"><h3>Our Brands</h3></div>
+                <hr>
+            <div class="top-brands">
+            <div class="card">
+                <img src="https://cdn11.bigcommerce.com/s-vnrl4jpszs/images/stencil/original/image-manager/gloves.jpg" class="img-fluid" alt="">
+                <div class="text-wrapper">
+                    <h3>
+                        Gloves
+                    </h3>
+                    <p>
+                        We manufacture Vinyl Exam Gloves to have extra strength, stretchability, and hole resistance. Perfect for use in all medication situations.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://cdn11.bigcommerce.com/s-vnrl4jpszs/images/stencil/original/image-manager/disposal-1.jpg" class="img-fluid" alt="">
+                <div class="text-wrapper">
+                <h3>
+                    Disposable Dietary Supplies
+                </h3>
+                <p>
+                    Our Dietary supplies are fully recyclable and sustainable. Our collection of disposable bagasse plates, cups, and more are in stock and ready to ship today.
+                </p>
+            </div>
+            </div>
+ 
+            <div class="card">
+                <img src="https://cdn11.bigcommerce.com/s-vnrl4jpszs/images/stencil/original/image-manager/medimax.jpg" class="img-fluid" alt="">
+                <div class="text-wrapper">
+                <h3>
+                    Garbage Bags
+                </h3>
+                <p>
+                   We manufacture our garbage bags to be highly reliable, mess-free, and budget-friendly options. All of our can liners have passed the strength and durability test in medical facilities.
+                </p>
+            </div>
+        </div>
+        </div>
+        </div>
+
+
+		<div class="category-shop">
+			<div class="category-shop-container">
+				<div class="heading-align"><h3>Top Category</h3></div>
+
+                <hr>
+                <div class="category-shop-slider">
+                    <div class="embla">
+                        <div class="embla__viewport">
+                            <div class="embla__container">
+                                <div class="embla__slide">
+                                    <div class="item">
+                                    <a href="/patient-treatment/medications/" class="each-category-shop-container">
+                                        <div class="category-img-section"><img src="https://cdn11.bigcommerce.com/s-vnrl4jpszs/images/stencil/original/image-manager/over-the-counter-medications-updated.jpg" class="img-fluid" alt="Medications"></div>
+                                        <div class="content">
+                                            <h4>Over-the-Counter Medications</h4>
+                                        </div> 
+                                    </a>
+                                    </div>
+                                </div>
+                                <div class="embla__slide">
+                                    <div class="item">
+                                    <a href="/test-kits-laboratory/" class="each-category-shop-container">
+                                        <div class="category-img-section"><img src="https://cdn11.bigcommerce.com/s-vnrl4jpszs/images/stencil/original/image-manager/test-kits-updated.jpg" class="img-fluid" alt="Test Kits & Laboratory"></div>
+                                        <div class="content">
+                                            <h4>Test Kits</h4> 
+                                        </div>
+                                    </a>
+                                    </div>
+                                </div>
+                                <div class="embla__slide">
+                                    <div class="item">
+                                    <a href="/office-supplies/" class="each-category-shop-container">
+                                        <div class="category-img-section"><img src="https://cdn11.bigcommerce.com/s-vnrl4jpszs/images/stencil/original/image-manager/office-supplies-updated.jpg" class="img-fluid" alt="break room"></div>
+                                        <div class="content">
+                                            <h4>Office supplies</h4>
+                                        </div>
+                                    </a>
+                                    </div>
+                                </div>
+                                <div class="embla__slide">
+                                    <div class="item">
+                                    <a href="/food-service/" class="each-category-shop-container">
+                                        <div class="category-img-section"><img src="https://cdn11.bigcommerce.com/s-vnrl4jpszs/images/stencil/original/image-manager/disposal-1.jpg" class="img-fluid" alt="Food Service"></div>
+                                        <div class="content">
+                                            <h4>Disposable Dietary supplies</h4>
+                                        </div>
+                                    </a>
+                                    </div>
+                                </div>
+                                <div class="embla__slide">
+                                    <div class="item">
+                                    <a href="/wound-care/" class="each-category-shop-container">
+                                        <div class="category-img-section"><img src="https://cdn11.bigcommerce.com/s-vnrl4jpszs/images/stencil/original/image-manager/wound-care-updated.jpg" class="img-fluid" alt="Personal Hygiene"></div>
+                                        <div class="content">
+                                            <h4>Wound care</h4>
+                                        </div>
+                                    </a>
+                                    </div>
+                                </div>
+                                <div class="embla__slide">
+                                    <div class="item">
+                                    <a href="/janitorial/" class="each-category-shop-container">
+                                        <div class="category-img-section"><img src="https://cdn11.bigcommerce.com/s-vnrl4jpszs/images/stencil/original/image-manager/janitorial-supplies-updated.jpg" class="img-fluid" alt="Patient Care"></div>
+                                        <div class="content">
+                                            <h4>Janitorial Supplies</h4>
+                                        </div>
+                                    </a>
+                                    </div>
+                                </div>
+                           
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="display:none;" class="below-categories-section">
+            <div class="left">
+			<div class="cms-section-left-wr">
+                <img src="{{cdn 'assets/img/skin.jpg'}}" alt="Sanitizers & Disinfectants" class="img-fluid">
+				</div>
+            </div>
+
+            <div class="right">
+                <h3>EVERYDAY ESSENTIALS</h3>
+                <h5>Sensitive &amp; Gentle on your Skin</h5>
+				<p>Guaranteed to disinfect surfaces and kill germs, our selection holds only easy-to-use solutions that are gentle to use around your loved-once. Our wipes selection can help eliminate 99.9% of unwanted germs &amp; bacteria on your skin and in your home</p>
+                <a href="/hand-soap-sanitizer/" class="btn-blue">Sanitizers &amp; Disinfectants</a>
+            </div>
+        </div>
+ {{#if theme_settings.show_most_popular_home}}
+    <div class="most-popular-product-section">
+        <div class="most-popular-container category-shop-container">
+            <div class="heading-align category-shop-container"><h3>Most Popular Product's</h3></div>
+            <hr>
+            <div class="most-popular-shop-slider">
+                <div class="embla">
+                    <div class="embla__viewport">
+                        <div class="embla__container" data-product-type="featured" {{#if settings.data_tag_enabled}} data-list-name="Featured Products" {{/if}}>
+                            {{#each products.featured}}
+
+                                <div class="embla__slide">
+                                    <div class="item">
+                                        {{>components/products/card settings=../settings theme_settings=../theme_settings customer=../customer event="list" position=(add @index 1)}}
+                                    </div>
+                                </div>
+                            {{/each}}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{{/if}}
+<div class="category-shop-container">
+    <div class="homepage-advertisement">
+        <div class="advertisement-left ad-3" style="display:none;">
+            <div class="advertisement-text cms-block cms-block-1">
+                <h5>Urgent Care
+                    Centers Products</h5>
+					<p>Enhance operations and manage costs while
+providing excellent care and improving patient outcomes</p>
+					<div>
+					<a href="/who-we-serve/urgent-care/" class="banner-action button button--primary button--large">Shop Now!</a>
+					</div>
+            </div>
+        </div>
+
+        <div class="advertisement-right ad-4">
+            <div class="advertisement-text cms-block cms-block-2">
+                <h5>Nursing Home Products</h5>
+				<p>Our full collection of nursing home medical supplies and specialty equipment
+ready to help you help elderly.</p>
+				<div>
+					<a href="/nursing-home-medical-supplies/" class="banner-action button button--primary button--large">Shop Now!</a>
+					</div>
+            </div>
+        </div>
+         <div class="advertisement-right ad-2">
+            <div class="advertisement-text cms-block cms-block-4">
+                <h5>Surgery & Dialysis Centers Products</h5>
+				<p>Top products and to help meet your needs to perform dialysis treatment.</p>
+				<div>
+					<a href="/who-we-serve/surgery-dialysis/" class="banner-action button button--primary button--large">Shop Now!</a>
+					</div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+    <div class="popular-categories-section" style="display:none;">
+        <div class="popular-categories-container category-shop-container">
+            <div class="heading-align"><h3>Popular Categories</h3></div>
+            <hr>
+            <div class="category-shop-slider">
+                <div class="embla">
+                    <div class="embla__viewport">
+                        <div class="embla__container">
+                            <div class="embla__slide">
+                                <div class="item">
+                                <a href="/janitorial/" class="each-category-shop-container">
+                                    <div class="category-img-section"><img src="{{cdn 'assets/img/Janitorial.jpg'}}" class="img-fluid" alt="Janitorial Products"></div>
+                                    <div class="content">
+                                        <h4>Janitorial Products</h4>
+                                    </div>
+                                </a>
+                                </div>
+                            </div>
+                            <div class="embla__slide">
+                                <div class="item">
+                                <a href="/medical-apparel/" class="each-category-shop-container">
+                                    <div class="category-img-section"><img src="{{cdn 'assets/img/medical-apparel.jpg'}}" class="img-fluid" alt="Medical Apparel"></div>
+                                    <div class="content">
+                                        <h4>Medical Apparel</h4>
+                                    </div>
+                                </a>
+                                </div>
+                            </div>
+                            <div class="embla__slide">
+                                <div class="item">
+                                <a href="/surgical/" class="each-category-shop-container">
+                                    <div class="category-img-section"><img src="{{cdn 'assets/img/surgerical-instruments.jpg'}}" class="img-fluid" alt="Surgical Instruments"></div>
+                                    <div class="content">
+                                        <h4>Surgical Instruments</h4>
+                                    </div>
+                                </a>
+                                </div>
+                            </div>
+                            <div class="embla__slide">
+                                <div class="item">
+                                <a href="/exam-room-supplies/" class="each-category-shop-container">
+                                    <div class="category-img-section"><img src="{{cdn 'assets/img/exam-room.jpg'}}" class="img-fluid" alt="Exam Room"></div>
+                                    <div class="content">
+                                        <h4>Exam Room Supplies</h4>
+                                    </div>
+                                </a>
+                                </div>
+                            </div>
+                            <div class="embla__slide">
+                                <div class="item">
+                                <a href="/equipment/" class="each-category-shop-container">
+                                    <div class="category-img-section"><img src="{{cdn 'assets/img/medical-equipment.jpg'}}" class="img-fluid" alt="Medical Equipment"></div>
+                                    <div class="content">
+                                        <h4>Medical Equipment</h4>
+                                    </div>
+                                </a>
+                                </div>
+                            </div>
+                            <div class="embla__slide">
+                                <div class="item">
+                                <a href="/test-kits-laboratory/" class="each-category-shop-container">
+                                    <div class="category-img-section"><img src="{{cdn 'assets/img/test-kit.jpg'}}" class="img-fluid" alt="Test Kit"></div>
+                                    <div class="content">
+                                        <h4>Test Kits</h4>
+                                    </div>
+                                </a>
+                                </div>
+                            </div>
+                            <div class="embla__slide">
+                                <div class="item">
+                                <a href="/wound-care/" class="each-category-shop-container">
+                                    <div class="category-img-section"><img src="{{cdn 'assets/img/wound-care.jpg'}}" class="img-fluid" alt="Wound Care"></div>
+                                    <div class="content">
+                                        <h4>Wound Care</h4>
+                                    </div>
+                                </a>
+                                </div>
+                            </div>
+                            <div class="embla__slide">
+                                <div class="item">
+                                <a href="/office-supplies/" class="each-category-shop-container">
+                                    <div class="category-img-section"><img src="{{cdn 'assets/img/office-supplies.jpg'}}" class="img-fluid" alt="Office Supplies"></div>
+                                    <div class="content">
+                                        <h4>Office Supplies</h4>
+                                    </div>
+                                </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="category-shop-container">
+    <div class="homepage-advertisement" style="display:none;">
+        <div class="advertisement-left ad-1">
+            <div class="advertisement-text cms-block cms-block-3">
+                <h5>Primary Care Products</h5>
+				<p>A comprehensive offering of clinician-preference, cost-efficient products for Primary Care.</p>
+				<div>
+					<a href="/who-we-serve/primary-care/" class="banner-action button button--primary button--large">Shop Now!</a>
+					</div>
+            </div>
+        </div>
+
+        <div class="advertisement-right ad-2">
+            <div class="advertisement-text cms-block cms-block-4">
+                <h5>Surgery & Dialysis Centers Products</h5>
+				<p>Top products and to help meet your needs to perform dialysis treatment.</p>
+				<div>
+					<a href="/who-we-serve/surgery-dialysis/" class="banner-action button button--primary button--large">Shop Now!</a>
+					</div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+
+{{#if theme_settings.show_top_sellers_home}}
+{{#if products.top_sellers}}
+		 <div class="best-sellers-container category-shop-container">
+
+        <h3>Most Popular Products</h3>
+
+        <hr>
+            {{> components/products/top products=products.top_sellers columns=theme_settings.homepage_top_products_column_count}}
+			   </div>
+
+        {{/if}}
+        {{/if}}
+        {{{region name="home_below_top_products"}}}
+
+
+{{!--
+<div class="homepage-blog-container">
+    <h5>Visit Our Blog</h5>
+    <hr>
+    <div class="homepage-blog-wrapper">
+        {{#each blog.recent_posts}}
+        <div class="each-blog">
+            <div class="blog-image">
+                <img src="{{getImage thumbnail theme_settings.blog_size}}" alt="{{thumbnail.alt}}" class="img-fluid">
+            </div>
+            <div class="blog-content-area">
+                <div class="content-area">
+                    <h4>{{title}}</h4>
+                 <small>Posted on {{date_published}}</small>
+                    <p>{{summary}}</p>
+                    <a href="{{url}}" class="read-more"><span>Read more</span></a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+--}}
+    {{!-- {{#if products.featured}}
+        {{> components/products/featured products=products.featured columns=theme_settings.homepage_featured_products_column_count}}
+    {{/if}}
+    {{{region name="home_below_featured_products"}}}
+
+    {{#if products.top_sellers}}
+        {{> components/products/top products=products.top_sellers columns=theme_settings.homepage_top_products_column_count}}
+    {{/if}}
+    {{{region name="home_below_top_products"}}}
+
+    {{#if products.new}}
+        {{> components/products/new products=products.new columns=theme_settings.homepage_new_products_column_count}}
+    {{/if}}
+    {{{region name="home_below_new_products"}}} --}}
+<div class="about-us-home">
+<div class="about-us-homecontent">
+<h2>We know medical supplies, through &amp; through</h2>
+<p>MeddMax's Offices are located in edison nj . MeddMax Ships Nationally. We Currently have over 25 meddmax branded products in stock. We Created MeddMax to service Medical facilities of all sizes, with a wide range of over 1000 sku'ss. From Office Supplies to incontinence and everything in between. Our Customer service and all staff are trained to accommodate and never say no to any challenge.  We Strive to bring all of our customers fast service at the best and consistent price.</p>
+</div>
+<div class="about-us-img">
+<img src="{{cdn 'assets/img/about-meddmax.png'}}" alt="about MeddMax Office Suppliece for B2B" class="img-fluid">
+</div>
+
+</div>
+{{/partial}}
+{{> layout/base}}

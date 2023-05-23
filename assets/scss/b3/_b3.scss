@@ -1,0 +1,56 @@
+.body {
+  display: none;
+}
+.navBar.navBar--sub.navBar--account {
+  display: none;
+}
+.modal-close:focus::after, .modal-close:focus::before {
+  display: none;
+}
+#add-to-cart-wrapper {
+    .form-action {
+        margin-top: 0;
+    }
+    .rfq-button-container.rfq-pdp-button-container {
+        display: flex !important;
+    }
+}
+.tingle-modal-box {
+  background-color: stencilColor('container-border-global-color-base') !important;
+}
+.b2b-wrap table tr:hover {
+  background-color: stencilColor('optimizedCheckout-orderSummary-borderColor') !important;
+} 
+#invoice-detail-pending .invoice-detail-pending {
+  background-color: stencilColor('container-border-global-color-base') !important;
+}
+.dropdown-menu.show-action {
+  background-color: stencilColor('optimizedCheckout-orderSummary-borderColor');
+  width: unset!important;
+}
+.cart-info {
+  color: stencilColor('color-textLink--active');
+}
+.file-upload-drop {
+  color: stencilColor('color-textLink--active');
+}
+.card-figcaption-body > button{
+  width: 100%;
+}
+.card-figcaption-body input {
+  vertical-align:middle;
+}
+button#add_to_cart {
+  border-color: stencilColor('button--primary-backgroundColor');
+  background-color: stencilColor('button--primary-backgroundColor');
+}
+#navPages-account {
+    .navPage-subMenu-list {
+        .navPage-subMenu-action.navPages-action {
+            padding-left: 0;
+        }
+    }
+}
+#shopping_list_table .product-options {
+    color: inherit !important;
+}

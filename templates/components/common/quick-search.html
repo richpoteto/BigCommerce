@@ -1,0 +1,20 @@
+
+<form onsubmit="return false" data-url="{{urls.search}}" data-quick-search-form>
+    <fieldset class="relative" >
+            <label class="is-srOnly" for="{{name}}">{{lang "search.quick_search.input_label"}}</label>
+            <a href="#search" class="clickable-search-icon icon-search"><i class="fa fa-search"></i></a>
+            <input class="form-control" placeholder="Search your product"
+                    data-search-quick
+                    name="{{name}}"
+                    id="{{name}}"
+                    data-error-message="{{lang 'search.error.empty_field'}}"
+                    autocomplete="off"
+            >
+    </fieldset>
+</form>
+<section class="quickSearchResults" data-bind="html: results"></section>
+<p role="status"
+    aria-live="polite"
+    class="aria-description--hidden"
+    data-search-aria-message-predefined-text="{{{lang 'search.results.quick_count_live'}}}"
+></p>

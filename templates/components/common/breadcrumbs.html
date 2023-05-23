@@ -1,0 +1,27 @@
+<div class="breadcrumb-wrapper-main">
+    <div class="breadcrumb-wrapper">
+        <div class="breadcrumb-container">
+            <nav aria-label="Breadcrumb" class="breadcrumb-menu">
+                <ol class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+                    {{#unless theme_settings.hide_breadcrumbs }}
+                    {{#each breadcrumbs}}
+                    <li class="breadcrumb {{#if @last}}is-active{{/if}}" itemprop="itemListElement" itemscope
+                        itemtype="https://schema.org/ListItem">
+                        <a class="breadcrumb-label" itemprop="item" href="{{url}}" {{#if @last}}aria-current="page"
+                            {{/if}}>
+                            <span itemprop="name">{{name}}</span>
+                        </a>
+                        <meta itemprop="position" content="{{add @index 1}}" />
+                    </li>
+                    {{/each}}
+                    {{/unless}}
+                </ol>
+            </nav>
+
+        </div>
+        <div class="breadcrumbs-img">
+            <img src="{{cdn 'assets/img/header-logo.png'}}" alt="Shop medical supplies from MeddMax" />
+        </div>
+
+    </div>
+</div>

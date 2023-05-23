@@ -1,0 +1,23 @@
+---
+blog:
+    posts:
+        limit: 6
+        pages: 3
+        summary: 200
+---
+{{#partial "page"}}
+
+   <h1 class="page-heading heading-tr">{{ blog.name }}</h1>
+
+<section class="page">
+    <div class="blog-wrapper">
+    {{#each blog.posts}}
+    {{> components/blog/post post=this}}
+        {{/each}}
+    </div>
+
+    {{> components/common/paginator pagination.blog}}
+</section>
+
+{{/partial}}
+{{> layout/base}}

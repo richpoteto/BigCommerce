@@ -1,0 +1,19 @@
+{{#partial "page"}}
+
+    <section class="page">
+	<div class="request-form-wr account-created">
+	<div class="request-form">
+	<div class="fields-wrapper">
+	 <img src="{{cdn '/img/doctor-create-account.png'}}" alt="Account created" />
+	</div>
+	
+        <div class="content-wrapper">
+            <h1 class="page-heading">{{lang 'create_account.created.heading'}}</h1>
+            <p>{{{lang 'create_account.created.intro' store_name=settings.store_name email=customer.email}}}</p>
+            <a class="button button--primary" href="{{create_account.continue_url}}">{{lang 'create_account.created.continue'}}</a>
+        </div>
+		</div>
+		</div>
+    </section>
+{{/partial}}
+{{> layout/base}}

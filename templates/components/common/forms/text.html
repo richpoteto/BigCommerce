@@ -1,0 +1,57 @@
+<div class="form-field" id="{{id}}" data-validation="{{validation}}" {{#if private_id}}data-type="{{private_id}}"{{/if}}>
+    {{#if createAcc '!==' 1 }}
+	<label class="form-label" for="{{id}}_input">{{label}}
+        {{#if required}}<small>{{lang 'common.required' }}</small>{{/if}}
+    </label>
+	{{/if}}
+	 {{#if createAcc '==' 1 }}
+	
+    <input type="text"
+           name="{{name}}"
+           id="{{id}}_input"
+           class="form-input"
+           data-label="{{label}}"
+           data-input
+           aria-required="{{required}}"
+           {{#if value}} value="{{value}}"
+		   {{else}}
+		   {{#if label '==' 'Address Line 1'}} value="N/A" {{/if}}	
+		   {{#if label '==' 'Suburb/City'}}  value="N/A"  {{/if}}
+		   {{#if label '==' 'State/Province'}}  value="N/A"  {{/if}}
+		   {{#if label '==' 'Zip/Postcode'}}  value="N/A"  {{/if}}
+		   {{/if}}
+           {{#if maxlength}}maxlength="{{maxlength}}"{{/if}}
+		   {{#if createAcc '!==' 1 }}
+           {{#if placeholder}} placeholder="{{placeholder}}"{{/if}}
+		   {{else}}
+		   placeholder="{{label}}*"
+		   {{/if}}
+           {{#if private_id}}data-field-type="{{private_id}}"{{/if}}
+		   
+		   
+		   {{#if label '==' 'Address Line 1'}} style="display: none" {{/if}}
+		   {{#if label '==' 'Address Line 2'}} style="display: none" {{/if}}
+		   {{#if label '==' 'Suburb/City'}} style="display: none" {{/if}}
+		   {{#if label '==' 'State/Province'}} style="display: none" {{/if}}
+		   {{#if label '==' 'Zip/Postcode'}} style="display: none" {{/if}}
+    >
+	
+	{{else}}
+	 <input type="text"
+           name="{{name}}"
+           id="{{id}}_input"
+           class="form-input"
+           data-label="{{label}}"
+           data-input
+           aria-required="{{required}}"
+           {{#if value}} value="{{value}}"{{/if}}
+           {{#if maxlength}}maxlength="{{maxlength}}"{{/if}}
+		   {{#if createAcc '!==' 1 }}
+           {{#if placeholder}} placeholder="{{placeholder}}"{{/if}}
+		   {{else}}
+		   placeholder="{{label}}*"
+		   {{/if}}
+           {{#if private_id}}data-field-type="{{private_id}}"{{/if}}
+    >
+	{{/if}}
+</div>

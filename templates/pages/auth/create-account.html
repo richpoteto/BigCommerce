@@ -1,0 +1,69 @@
+{{inject 'passwordRequirements' settings.password_requirements}}
+{{inject 'recaptchaTitle' (lang 'create_account.recaptcha_title')}}
+{{#partial "page"}}
+<div class="request-form-wr">
+<div class="request-form">
+<div class="fields-wrapper">
+     <div class="account account--fixed">
+	 <h1>REQUEST ACCESS</h1>
+	 <div style="width: 100%;position: relative;margin-bottom: 50px;margin-top: -10px;"><div style="width: 150px;height: 4px;background: #017eb8;margin: 30px auto;"></div></div>
+        <div class="account-body">
+            {{#if forms.create_account.error}}
+                {{> components/common/alert/alert-error forms.create_account.error}}
+            {{/if}}
+            {{#if settings.account_creation_enabled}}
+                <form action="{{urls.auth.save_new_account}}" data-create-account-form method="post" class="form">
+                    <div class="form-row form-row--half">                        
+                        {{#each forms.create_account.address_fields }}
+			
+						{{#if this.type '==' 'singleline'}}
+						 {{> components/common/forms/text createAcc=1}}
+						 {{else}}
+						 {{#if this.type '==' 'singleselect'}}
+						  {{> components/common/forms/select createAcc=1}}
+						  {{else}}
+                            {{{dynamicComponent 'components/common/forms' }}}
+							{{/if}}
+							{{/if}}
+                        {{/each}}
+						
+						{{#each forms.create_account.account_fields }}
+                            {{#if this.type '==' 'singleline'}}
+						 {{> components/common/forms/text createAcc=1}}						 
+						 {{else}}
+						 {{#if  this.type '==' 'password' }}
+						  {{> components/common/forms/password createAcc=1}}
+						  {{else}}
+                            {{{dynamicComponent 'components/common/forms' }}}
+							{{/if}}
+							{{/if}}
+                        {{/each}}
+						
+                        {{inject 'required' (lang 'common.required')}}
+                        {{inject 'state_error' (lang 'errors.state_error')}}
+                    </div>
+                    {{{ forms.create_account.recaptcha.markup}}}
+                    <div class="form-actions">
+                        <input type="submit" class="button button--primary" value="{{lang 'forms.create_account.submit_value' }}" />
+                    </div>
+                </form>
+            {{/if}}
+			<div class="more-sgt">
+			Already have an account? <a href="/login.php">Log In</a>
+			</div>
+        </div>
+    </div>
+	 </div>
+	 <div class="content-wrapper">
+	 <div class="create-acc-content">
+	 <h2>MeddMax Account</h2>
+<p>
+Everything you need in one wholesale account. Create a MeddMax account to access a world of savings, strategy, updates and consultative resources for all of your B2B needs!</p>
+	 </div>
+	 </div>
+	 </div>
+	 
+	 
+	 </div>
+{{/partial}}
+{{> layout/base}}

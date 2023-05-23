@@ -1,0 +1,28 @@
+{{#partial "page"}}
+ <h1 class="page-heading heading-tr">{{page.title}}</h1>
+<section class="page">   
+    {{#if page.sub_pages}}
+        <nav class="navBar navBar--sub">
+            <ul class="navBar-section account-navigation">
+                {{#each page.sub_pages}}
+                    <li class="navBar-item"><a class="navBar-action" href="{{url}}">{{title}}</a></li>
+                {{/each}}
+            </ul>
+        </nav>
+    {{/if}}
+
+    <div id="contact-us-page" class="page-content page-content--centered">
+        {{#if forms.contact.success}}
+            <div id="contact-us-success">{{{lang 'forms.contact_us.successful' shopPath=urls.home}}}</div>
+        {{else}}
+            <p>{{{page.content}}}</p>
+            {{> components/page/contact-us-form}}
+        {{/if}}
+
+    </div>
+
+</section>
+
+{{/partial}}
+
+{{> layout/base}}

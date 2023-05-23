@@ -1,0 +1,1 @@
+{"components/search/heading":"<h1 class=\"page-heading\">\r\n    {{#if forms.search.search_error}}\r\n        {{lang 'search.errorMessage' }}\r\n    {{else}}\r\n        {{{lang 'search.results.count' count=result_count search_query=(sanitize forms.search.query) }}}\r\n    {{/if}}\r\n</h1>\r\n"}

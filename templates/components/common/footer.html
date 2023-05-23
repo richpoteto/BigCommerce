@@ -1,0 +1,68 @@
+{{#if banners.bottom}}
+    {{#if settings.data_tag_enabled}}
+        <div class="banners" data-banner-location="bottom">
+            {{#each (limit banners.bottom_metadata 1)}}
+                <div class="banner" data-event-type="promotion" data-entity-id="{{this.id}}" data-name="{{this.banner-name}}" data-position="{{this.location}}" data-name="{{this.banner-name}}">
+                    <div data-event-type="promotion-click">
+                        {{{this.content}}}
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    {{else}}
+        <div class="banners" data-banner-location="bottom">
+            <div class="banner">
+                {{{limit banners.bottom 1}}}
+            </div>
+        </div>
+    {{/if}}
+
+{{/if}}
+<footer class="footer-wr" role="contentinfo">
+		<div class="footer-bg-cover">
+			<div class="footer-bg-container">
+				<div class="each-footer-section footer-logo">
+					<a href="/" class="footer-logo"><img src="{{cdn 'assets/img/logo-white.svg'}}" class="img-fluid" alt="Medical Supplies for B2B - MeddMax"></a>
+					<p>Medd Max is built specifically for our clients purchasing needs and strive in delivering the best products at the most competitive price. We understand the demand of each and every
+					client and deal directly with manufacturers in addition to specializing in mass-production within our very own manufacturing facility.</p>
+					<div class="fph">Call us: <a href="tel:866-924-0900">866-924-0900</a></div>
+				</div>
+				<div class="each-footer-section">
+					<h4>Shop</h4>
+					<ul>
+						<li><a href="/categories/">Shop All</a></li>
+						<li><a href="/test-kits-laboratory/">Covid Protection</a></li>
+						<li><a href="/medical-apparel/">Apparel &amp; PPE</a></li>
+						<li><a href="/hand-soap-sanitizer/">Sanitizers</a></li>
+						<li><a href="/office-supplies/">Office Supplies</a></li>
+						<li><a href="/medical-apparel/">Medical Apparel</a></li>
+					</ul>
+				</div>
+				<div class="each-footer-section">
+					<h4>Contact</h4>
+					<ul>
+						<li><a href="/contact-us/">Contact Us</a></li>
+						<li><a href="/shipping-returns/">Shipping &amp; Returns</a></li>
+						<li><a href="/sitemap.php">Site Map</a></li>
+						<li><a href="/privacy/">Privacy</a></li>
+						<li><a href="/terms/">Terms</a></li>
+						<li><a href="/site-credits/">Site Credits</a></li>
+					</ul>
+				</div>
+				<div class="each-footer-section">
+					<h4>Newsletter Subscribe</h4>
+					<div class="form-group">
+                        {{> components/common/subscription-form}}
+
+					</div>
+				</div>
+			</div>
+			<div class="copyright-container">
+				<div align="left"><p class="copyrighttext"> &copy; Copyright {{moment format="YYYY"}} Medd Max, All Rights Reserved. Site by <a href="https://makdigitaldesign.com">MAK</a></p></div>
+				<div align="right">
+                    {{> components/common/social-links}}
+				</div>
+			</div>
+		</div>
+    {{{region name="ssl_site_seal--global"}}}
+</footer>

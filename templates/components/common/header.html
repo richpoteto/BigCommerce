@@ -1,0 +1,103 @@
+<a href="#main-content" class="skip-to-main-link">{{lang 'header.skip_to_main'}}</a>
+{{#if banners.top}}
+<div class="banners" data-banner-location="top">
+    {{#each (limit banners.top_metadata 1)}}
+    <div class="banner" data-event-type="promotion" data-entity-id="{{this.id}}" data-name="{{this.banner-name}}" data-position="{{this.location}}" data-banner-id="{{this.banner-name}}">
+        <div data-event-type="promotion-click">
+            {{{this.content}}}
+        </div>
+    </div>
+    {{/each}}
+</div>
+{{/if}}
+<header class="header" role="banner">
+    
+    
+		<div class="top-blue-row">
+			<div class="custom-container">
+				<div class="top-small-link">
+					<ul class="top-left-links">
+						<li><a href="/contact-us/">Contact Us</a></li>
+						<li><a href="/about-us">About Us</a>|</li>				
+						<li><a href="/blog/">Blog</a>|</li></li>
+					</ul>
+					<p class="top-shippi ng-line">Free Shipping on all Orders <b>Over $250!</b></p>
+					<ul class="top-right-links">
+						<li><a href="/wholesale/">Wholesale</a>|</li>
+						<li>
+						<li class="h-p">Call us: <a href="tel:18669240900">866-924-0900</a></li>
+					</ul>
+				</div>
+			</div>	
+		</div>
+
+		<div class="top-snd-white-row">
+			<div class="custom-container">
+				<div class="logo-serch-bar">
+					<div class="top-nav">
+						<a href="#" id="sidenav-toggle" class="mobileMenu-toggle flex" data-mobile-menu-toggle="menu">
+							<span class="mobileMenu-toggleIcon"></span>
+							<span class="ml-12">Shop By Categories</span>
+						</a>
+					</div>
+					{{!-- <a href="/" class="header-logo"><img src="{{cdn 'assets/img/header-logo.png'}}" class="img-fluid" alt=""></a>	 --}}
+					<a href="/" class="header-logo"><img src="{{cdn 'assets/img/logo.svg'}}" class="img-fluid" alt="Shop MeddMax for all your Medical Supplies"></a>
+					<div class="header-right-search-bar-container">
+						<div class="form-group display-none md-inline">
+                            <div id="quickSearch" data-prevent-quick-search-close>
+								{{> components/common/quick-search name='nav-menu-quick-search'}}
+                            </div>
+							
+						</div>
+
+						<div class="user-section">
+							<a href="/account.php" class="user-profileicon">
+								<img src="{{cdn 'assets/img/user.svg'}}" class="img-fluid" alt="My Account">
+								<p>
+								{{#if customer}}
+								<big><a href="/account.php">My Account</a></big>
+								{{else}}
+									<small class="refg"><a href="/login.php?action=create_account">Registration</a></small>
+									<big><a href="/login.php">Customer Login</a></big>
+									{{/if}}
+								</p>
+							</a>
+						</div>
+						<div>
+							<a href="/cart.php" class="user-carticon" id="cart-btn">
+								<img src="{{cdn 'assets/img/shopping-cart.svg'}}" class="img-fluid" alt="Shopping Cart">
+								<span id="cart-qty" class="cartvalue"></span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>	
+		</div>
+
+        <div class="logosnd-row">
+			<div class="custom-container">
+				<div class="snd-flex-row">
+                    <div class="snd-right-search-section">
+						<div class="menu-link-call">
+                            {{> components/common/navigation-menu }}
+                        </div> 
+                    </div>  
+                </div> 
+            </div> 
+        </div>  
+		<div class="logo-serch-bar mobile md-hidden">
+			<div class="header-right-search-bar-container">
+				<div class="form-group">
+					<div id="quickSearch" data-prevent-quick-search-close>
+						{{> components/common/quick-search name='nav-menu-quick-search'}}
+					</div>
+					
+				</div>
+			</div>
+		</div>
+       
+
+    
+</header>
+{{{region name="header_bottom--global"}}}
+{{{region name="header_bottom"}}}

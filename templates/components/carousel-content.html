@@ -1,0 +1,16 @@
+
+    <div class="{{#and (if heading '==' false) (if text '==' false)}} heroCarousel-content--empty{{/and}}">
+        <div class="seprate-contrent-text">
+            {{#if heading}}
+            <h1 >{{{heading}}}</h1>
+        {{/if}}
+        {{#if text}}
+            <h3 >{{{text}}}</h3>
+        {{/if}}
+        {{#if button_text}}
+            <a href="{{url}}" aria-label="{{#if this.alt_text.length '!=' 0}}{{this.alt_text}}{{else}}{{lang 'carousel.slide_number' slide_number=(add @index 1)}}{{/if}}, {{button_text}}" class="heroCarousel-action button button--primary button--large">{{button_text}}</a>
+        {{/if}}
+        </div>
+        
+    </div>
+

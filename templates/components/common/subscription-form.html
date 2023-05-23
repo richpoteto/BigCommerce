@@ -1,0 +1,15 @@
+<form action="{{urls.subscribe.action}}" method="post">
+        <input type="hidden" name="action" value="subscribe">
+        <input type="hidden" name="nl_first_name" value="bc">
+        <input type="hidden" name="check" value="1">
+        <input type="text" class="form-control" id="nl_email"
+        name="nl_email"
+        type="email"
+        value="{{customer.email}}"
+        placeholder="{{lang 'newsletter.email_placeholder'}}"
+        aria-describedby="alertBox-message-text"
+        aria-required="true"
+        required>
+        <button type="submit" class="cta-button-function">Subscribe Newsletter</button>
+
+</form>

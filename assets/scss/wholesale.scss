@@ -1,0 +1,268 @@
+﻿// wholesale styles
+#aboutcontent .wholesalepadding.main-banner-content-area
+{
+    padding: 80px 0px 60px;
+}
+.partners-heading
+{
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin: 140px auto 0px;
+}
+.partners-heading p b
+{
+    font-family: 'Roboto Flex';
+    font-weight: normal;
+}
+ul.partner-logo-list
+{
+    width: 100%;
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+ul.partner-logo-list li
+{
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: auto;
+    margin-bottom: 0px;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    padding-left: 0px;
+}
+ul.partner-logo-list li::before
+{
+    content: none;
+    position: static;
+}
+.wholesale-sndicon
+{
+    max-width: 1200px;
+    width: 92%;
+    margin: 140px auto;
+    display: block;
+}
+.wholesale-sndicon ul
+{
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.wholesale-sndicon ul li
+{
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.wholesale-sndicon ul li img
+{
+    display: block;
+    margin: 0px auto 12px;
+}
+.wholesale-sndicon ul li span
+{
+    font-family: 'Roboto Flex';
+    font-size: 21px;
+    color: #000000;
+    display: block;
+}
+.productp-services-wholesale
+{
+    width: 100%;
+    display: block;
+    margin: 0px auto;
+    background-image: url(../img/wholesale-img/services-blue-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    text-align: center;
+}
+.productp-services-wholesale .sensitive-screen-single-content
+{
+  
+    margin: 0px auto;
+    display: block;
+    text-align: center;
+    padding: 90px 0px 220px;
+}
+.productp-services-wholesale .sensitive-screen-single-content hr
+{
+    margin: 30px auto 10px;
+}
+.product-services-container-flex
+{
+    max-width: 1410px;
+   
+    margin: -80px auto 0px;
+    display: flex;
+    display: -webkit-flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.each-product-services-container
+{
+    width: 29%;
+    height: 410px;
+    display: block;
+    margin: 0px auto 80px;
+    box-shadow: 0px 18px 30px rgba(0,0,0,.1);
+    background-color: #ffffff;
+    text-align: center;
+    padding: 70px 30px 40px;
+}
+.each-product-services-container img.highlighticon
+{
+    max-width: 100px;
+    display: block;
+    margin: 0px auto 32px;
+}
+.each-product-services-container h4
+{
+    font-family: 'Roboto Flex';
+    font-size: 26px;
+    color: #000000;
+    display: block;
+    margin: 0px;
+}
+.each-product-services-container hr
+{
+    border-top: 1px solid #a3a3a3;
+    width: 42px;
+    display: block;
+    margin: 18px auto 24px;
+}
+.each-product-services-container span
+{
+    font-family: 'Roboto Flex';
+    font-size: 18px;
+    line-height: 25px;
+    color: #828282;
+    display: block;
+    margin: 0px;
+}
+#wholesaleabout .sensitive-gentle-skin-section
+{
+    background-image: url(../img/wholesale-img/distribution-bg-cover.png);
+    margin: 80px auto 0px;
+}
+#wholesaleabout .sensitive-screen-single-content
+{
+    max-width: 750px;
+}
+#wholesaleabout .sensitive-screen-single-content small
+{
+    margin-bottom: 18px;
+}
+#wholesaleabout .sensitive-screen-single-content h2
+{
+    font-size: 62px;
+    line-height: 72px;
+}
+#wholesaleabout .sensitive-screen-single-content p
+{
+    font-size: 24px;
+    line-height: 38px;
+}
+#wholesaleabout .sensitive-screen-single-content hr
+{
+    width: 52px;
+    display: block;
+    margin: 30px 0px 44px auto;
+}
+.distribution-product-service
+{
+    position: absolute;
+    left: 0px;
+    bottom: 0;
+    display: inline-block;
+    width: 40.5%;
+    height: 705px;
+    background-color: #000000;
+}
+.distribution-product-service img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+#wholesalecontact .newsletter-bg-cover::before
+{
+    content: none;
+    position: static;
+    border: 0px;
+}
+#wholesalecontact .newsletter-content-container small
+{
+    font-family: 'Roboto Flex';
+    font-size: 28px;
+    color: #000000;
+    display: block;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+}
+#wholesalecontact .newsletter-content-container h4
+{
+    font-size: 80px;
+    line-height: 94px;
+}
+#wholesalecontact .newsletter-content-container hr
+{
+    border-top: 1px solid #626262;
+    width: 62px;
+    display: block;
+    margin: 40px auto 62px;
+}
+#wholesaleinstahandle .instagram-section-bg
+{
+    margin: 0px auto 0px;
+    background-color: #ffffff;
+}
+#aboutcontent .seprate-contrent-text small {
+  font-family: 'Roboto Flex';
+  font-size: 28px;
+  color: #ffffff;
+  display: block;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+#aboutcontent .seprate-contrent-text p {
+  font-family: 'Roboto Flex';
+  font-size: 26px;
+  line-height: 38px;
+  color: #ffffff;
+  display: block;
+  margin-bottom: 10px;
+}
+#multi-purp-info {
+  max-width: 50%;
+  text-align: center;
+}
+nav[aria-label="Breadcrumb"],
+    h1.page-heading {
+    display: none!important;
+    }
+    .page,
+    .page-content--centered {
+    max-width: 100% !important;
+    width: 100% !important;
+    }
+  .seprate-contrent-text {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

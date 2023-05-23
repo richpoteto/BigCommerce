@@ -1,0 +1,30 @@
+{{#partial "head"}}
+
+{{{ checkout.checkout_head }}}
+{{{ stylesheet '/assets/css/optimized-checkout.css' }}}
+{{ getFontsCollection }}
+
+<script type="text/javascript">
+    window.language = {{{langJson 'optimized_checkout'}}};
+</script>
+
+{{{head.scripts}}}
+
+{{/partial}}
+
+{{#partial "page"}}
+<header class="checkoutHeader optimizedCheckout-header">
+    <div class="checkoutHeader-content">
+        <a class="checkoutHeader-link" href="{{urls.home}}">
+            <img src="{{cdn 'assets/img/header-logo.png'}}" class="img-fluid" alt="">
+        </a>
+    </div>
+</header>
+
+{{{ checkout.checkout_content }}}
+
+{{{ footer.scripts }}}
+
+{{/partial}}
+
+{{> layout/empty}}

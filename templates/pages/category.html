@@ -1,0 +1,90 @@
+---
+category:
+shop_by_price: true
+products:
+limit: {{theme_settings.categorypage_products_per_page}}
+---
+{{inject "categoryProductsPerPage" theme_settings.categorypage_products_per_page}}
+{{inject "categoryId" category.id}}
+{{#partial "head"}}
+{{#if pagination.category.previous}}
+<link rel="prev" href="{{pagination.category.previous}}">
+{{/if}}
+{{#if pagination.category.next}}
+<link rel="next" href="{{pagination.category.next}}">
+{{/if}}
+{{/partial}}
+
+{{#partial "page"}}
+
+{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+{{!--
+{{#if category.image}}
+{{> components/common/responsive-img
+image=category.image
+fallback_size=theme_settings.zoom_size
+lazyload=theme_settings.lazyload_mode
+class="category-header-image"
+}}
+{{/if}}
+--}}
+{{#unless theme_settings.hide_category_page_heading }}
+<div class="category-heading-description-section">
+    <h1 class="page-heading">{{category.name}}</h1>
+</div>
+{{{region name="category_below_header"}}}
+{{/unless}}
+{{{category.description}}}
+<div class="page">
+    <div class="flex flex-wrap gap-12">
+        <div class="basis-fifth">
+		{{#if category.products}}
+            {{#if category.faceted_search_enabled}}
+            <aside class="page-sidebar mt-36" id="faceted-search-container">
+                {{> components/category/sidebar}}
+            </aside>
+            {{else if category.subcategories}}
+            <div class="sidebar-wrap">
+                <aside class="page-sidebar mt-36" id="faceted-search-container">
+                    {{> components/category/sidebar}}
+                </aside>
+                {{!--<div class="another-product-info-botoom-sidebar">
+                    <div class="each-product-info-bottom-sidebar">
+                        <h4>Compare Products</h4>
+                        <p>You have no items to compare.</p>
+                    </div>
+                    <div class="each-product-info-bottom-sidebar">
+                        <h4>My Quote</h4>
+                        <p>You have no items in your quote.</p>
+                    </div>
+                </div>--}}
+            </div>
+            {{else if category.shop_by_price}}
+            {{#if theme_settings.shop_by_price_visibility}}
+           <aside class="page-sidebar mt-36" id="faceted-search-container">
+                {{> components/category/sidebar}}
+            </aside> 
+            {{/if}}
+            {{/if}}
+            {{!--<div class="sidebar-info">
+                <div class="each-product-info-bottom-sidebar">
+                    <h4>Compare Products</h4>
+                    <p>You have no items to compare.</p>
+                </div>
+                <div class="each-product-info-bottom-sidebar">
+                    <h4>My Quote</h4>
+                    <p>You have no items in your quote.</p>
+                </div>
+            </div>--}}
+        </div>
+
+        <div class="page-content grow basis-60" id="product-listing-container">
+            {{> components/category/product-listing}}
+            {{{region name="category_below_content"}}}
+        </div>
+		{{/if}}
+    </div>
+</div>
+
+{{/partial}}
+{{> layout/base}}

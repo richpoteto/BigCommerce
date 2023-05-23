@@ -1,0 +1,1 @@
+{"layout/empty":"<!DOCTYPE html>\r\n<html>\r\n<head>\r\n    <title>{{ head.title }}</title>\r\n    {{{ head.meta_tags }}}\r\n    {{{ head.config }}}\r\n\r\n    <link href=\"{{ head.favicon }}\" rel=\"shortcut icon\">\r\n    {{#block \"head\"}}{{/block}}\r\n</head>\r\n<body>\r\n    {{#block \"page\"}}{{/block}}\r\n</body>\r\n</html>\r\n"}

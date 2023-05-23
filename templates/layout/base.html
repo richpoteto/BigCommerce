@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html class="no-js" lang="{{ locale_name }}">
+    <head>
+        <title>{{ head.title }}</title>
+        {{{ resourceHints }}}
+        {{{ head.meta_tags }}}
+        {{{ head.config }}}
+        {{#block "head"}} {{/block}}
+        <link href="{{ head.favicon }}" rel="shortcut icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script>
+            {{!-- Change document class from no-js to js so we can detect this in css --}}
+            document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+        </script>
+
+        {{> components/common/polyfill-script }}
+        <script>window.consentManagerTranslations = `{{{langJson 'consent_manager'}}}`;</script>
+
+        {{!-- Load Lazysizes script ASAP so images will appear --}}
+        <script>
+            {{!-- Only load visible elements until the onload event fires, after which preload nearby elements. --}}
+            window.lazySizesConfig = window.lazySizesConfig || {};
+            window.lazySizesConfig.loadMode = 1;
+        </script>
+        <script async src="{{cdn 'assets/dist/theme-bundle.head_async.js'}}"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+
+        <script src="https://searchserverapi.com/widgets/bigcommerce/init.js?api_key=4f0i6u5F6y"></script>
+
+
+        <script>
+            WebFont.load({
+                custom: {
+                    families: ['Karla', 'Source Sans Pro']
+                },
+                classes: false
+            });
+        </script>
+		
+		
+
+        {{ getFontsCollection }}
+        {{{stylesheet '/assets/css/theme.css'}}}
+        {{{stylesheet '/assets/css/bootstrap.css'}}}
+        {{{stylesheet '/assets/css/font-awesome.css'}}}
+        {{{stylesheet '/assets/css/owl-min.css'}}}
+        {{{stylesheet '/assets/css/owl-min2.css'}}}
+        {{{stylesheet '/assets/css/style.css'}}}
+
+        {{{head.scripts}}}
+
+        {{~inject 'zoomSize' theme_settings.zoom_size}}
+        {{~inject 'productSize' theme_settings.product_size}}
+        {{~inject 'showAdminBar' theme_settings.show-admin-bar}}
+        {{~inject 'genericError' (lang 'common.generic_error')}}
+        {{~inject 'maintenanceModeSettings' settings.maintenance}}
+        {{~inject 'adminBarLanguage' (langJson 'admin')}}
+        {{~inject 'urls' urls}}
+        {{~inject 'secureBaseUrl' settings.secure_base_url}}
+        {{~inject 'cartId' cart_id}}
+        {{~inject 'channelId' settings.channel_id}}
+        {{~inject 'template' template}}
+        {{~inject 'validationDictionaryJSON' (langJson 'validation_messages')}}
+        {{~inject 'validationFallbackDictionaryJSON' (langJson 'validation_fallback_messages')}}
+        {{~inject 'validationDefaultDictionaryJSON' (langJson 'validation_default_messages')}}
+        {{~inject 'carouselArrowAndDotAriaLabel' (lang 'carousel.arrow_and_dot_aria_label')}}
+        {{~inject 'carouselActiveDotAriaLabel' (lang 'carousel.active_dot_aria_label')}}
+        {{~inject 'carouselContentAnnounceMessage' (lang 'carousel.content_announce_message')}}
+
+        {{!-- BundleB2B --}}
+        {{~inject "customer" customer}}
+        {{~inject 'store_hash' settings.store_hash}}
+        {{~inject "settings" settings}}
+        {{~inject "page_type" page_type}}
+        {{~inject "currency_selector" currency_selector}}
+        {{!-- BundleB2B --}}
+    </head>
+    <body class="page-{{page_type}}">
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NBF49C5"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        <svg data-src="{{cdn 'img/icon-sprite.svg'}}" class="icons-svg-sprite"></svg>
+
+        {{> components/common/header }}
+            {{> components/common/body }}
+            {{> components/common/footer }}
+            <div id="app"></div>
+
+            {{inject "token" settings.storefront_api.token}}
+        <script>
+            const { token } = JSON.parse({{ jsContext }})
+            window.__token__ = token;
+            </script>
+
+        <script>window.__webpack_public_path__ = "{{cdn 'assets/dist/'}}";</script>
+        <script src="{{cdn 'assets/dist/theme-bundle.main.js'}}"></script>
+        <script>
+            {{!-- Exported in app.js --}}
+            window.stencilBootstrap("{{page_type}}", {{jsContext}}).load();
+            {{!-- BundleB2B --}}
+            window.jsContext = JSON.parse({{jsContext}})
+            {{!-- BundleB2B --}}
+        </script>
+
+        {{{footer.scripts}}}
+    </body>
+</html>
+
+{{!-- BundleB2B --}}
+<script>
+    const inPages = () => {
+        const urlArray = [          
+            '/buy-again/',
+            '/address-book/',
+            '/create-quote/',
+            '/quote-detail/',
+            '/quote/',
+            '/quote-edit/',
+            '/quote-list/',
+            '/quotes-list/',
+            '/dashboard/',
+            '/order-detail/',
+            '/quick-order-pad/',
+            '/shopping-list/',
+            '/shopping-lists/',
+            '/user-management/',
+            '/invoices/',
+            '/invoice-payment/',
+            '/invoice-details/',
+            '/invoice-payment-receipt/',
+            '/account.php',
+        ];
+        const current = window.location.pathname;
+        return urlArray.includes(current);
+    };
+    if(!inPages()) {
+        document.querySelector('.body').style.display = "block";
+    }
+    if(inPages()) {
+        const style = document.createElement('style');
+        style.innerHTML = `
+            .navBar.navBar--sub.navBar--account {
+                display: block !important;
+            }
+        `;
+        document.querySelector('head').append(style);
+    }
+</script>
+{{!-- BundleB2B --}}

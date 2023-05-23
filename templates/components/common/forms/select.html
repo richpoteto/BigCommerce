@@ -1,0 +1,23 @@
+<div class="form-field" id="{{id}}" data-validation="{{validation}}" {{#if private_id}} data-type="{{private_id}}"
+    {{/if}}>
+   {{#if createAcc '!==' 1 }}
+	<label class="form-label" for="{{id}}_input">{{label}}
+        {{#if required}}<small>{{lang 'common.required' }}</small>{{/if}}
+    </label>
+	{{/if}}
+    <select class="{{class}} form-select"
+            id="{{id}}_select"
+            data-label="{{label}}"
+            data-input
+            aria-required="{{required}}"
+            name="{{name}}"
+            {{#if private_id}} data-field-type="{{private_id}}" {{/if}}
+    >
+        {{#if options}}
+        <option value="">{{chooseprefix}}</option>
+        {{#each options}}
+        <option {{#if selected}} selected {{/if}} value="{{value}}">{{{label}}}</option>
+        {{/each}}
+        {{/if}}
+    </select>
+</div>
